@@ -209,17 +209,18 @@ function getNeofetchHTML() {
             <img src="./img.jpg" alt="Avishkar Bhosale profile illustration" />
         </div>
         <div class="neofetch-info">
-            <div class="neofetch-user">avishkar@sde-pune</div>
+            <div class="neofetch-user">avishkar@avi-vivobook</div>
             <div class="neofetch-stats">
-                <span class="neofetch-label">OS:</span><span class="neofetch-value">B.Tech IT (AISSMS IOIT, Pune)</span>
-                <span class="neofetch-label">Kernel:</span><span class="neofetch-value">SDE & AI/ML Portfolio v1.0</span>
-                <span class="neofetch-label">Packages:</span><span class="neofetch-value">LeetCode, TryHackMe, Coding Ninjas</span>
-                <span class="neofetch-label">Host:</span><span class="neofetch-value">ASUS TUF Gaming A15</span>
-                <span class="neofetch-label">Shell:</span><span class="neofetch-value">powershell (pwsh)</span>
-                <span class="neofetch-label">DE:</span><span class="neofetch-value">Visual Studio Code</span>
-                <span class="neofetch-label">CPU:</span><span class="neofetch-value">AMD Ryzen 5 4600H (12)</span>
-                <span class="neofetch-label">GPU:</span><span class="neofetch-value">NVIDIA GeForce GTX 1650</span>
+                <span class="neofetch-label">OS:</span><span class="neofetch-value">Windows 11 / Kali Linux</span>
+                <span class="neofetch-label">Host:</span><span class="neofetch-value">ASUS Vivobook K3605VC</span>
+                <span class="neofetch-label">Kernel:</span><span class="neofetch-value">SDE & AI/ML Portfolio v1.0.0</span>
                 <span class="neofetch-label">Uptime:</span><span class="neofetch-value" id="neofetchUptime">0h 0m 0s</span>
+                <span class="neofetch-label">Packages:</span><span class="neofetch-value">LeetCode (2534), TryHackMe (Voyager), Coding Ninjas</span>
+                <span class="neofetch-label">Shell:</span><span class="neofetch-value">powershell (pwsh) / zsh</span>
+                <span class="neofetch-label">DE:</span><span class="neofetch-value">Windows Explorer / KDE Plasma</span>
+                <span class="neofetch-label">CPU:</span><span class="neofetch-value">13th Gen Intel Core i5-13420H (12 threads)</span>
+                <span class="neofetch-label">GPU:</span><span class="neofetch-value">NVIDIA GeForce RTX 3050 Laptop GPU (4GB)</span>
+                <span class="neofetch-label">Memory:</span><span class="neofetch-value">16.0 GB RAM (Speed: 3200 MT/s)</span>
             </div>
             <div class="neofetch-colors">
                 <span class="color-block cb-red"></span>

@@ -4,27 +4,27 @@
  */
 
 :root {
-    --bg-primary: #090d16;
-    --bg-sidebar: #05080e;
-    --bg-editor: #0c101b;
-    --bg-terminal: #070a12;
-    --bg-tab-active: #0c101b;
-    --bg-tab-inactive: #04060b;
+    --bg-primary: #0a0a16;      /* Dark background under the image */
+    --bg-sidebar: rgba(10, 10, 22, 0.5);      /* Translucent sidebar */
+    --bg-editor: rgba(15, 15, 30, 0.4);       /* Translucent editor */
+    --bg-terminal: rgba(10, 10, 22, 0.55);      /* Translucent terminal */
+    --bg-tab-active: rgba(15, 15, 30, 0.4);
+    --bg-tab-inactive: rgba(10, 10, 22, 0.5);
     
-    --border-color: #1a2333;
-    --accent-color: #00f59b;
-    --accent-secondary: #7c3aed;
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
+    --border-color: #2d2d5a;    /* Royal purple border */
+    --accent-color: #00f5ff;    /* Premium Electric Cyan */
+    --accent-secondary: #b362ff; /* Vibrant purple accent */
+    --text-primary: #f8f8f2;
+    --text-secondary: #a599e4;  /* Premium soft purple text */
     --text-dark: #64748b;
     
-    --syntax-comment: #6272a4;
-    --syntax-keyword: #ff79c6;
-    --syntax-string: #f1fa8c;
-    --syntax-number: #bd93f9;
-    --syntax-variable: #50fa7b;
-    --syntax-class: #8be9fd;
-    --syntax-tag: #ffb86c;
+    --syntax-comment: #b362ff;   /* Vibrant purple comments */
+    --syntax-keyword: #ff79c6;   /* Pink keywords */
+    --syntax-string: #00ffc4;    /* Premium Neon Teal string values */
+    --syntax-number: #ff9e3b;    /* Orange numbers */
+    --syntax-variable: #9effff;  /* Cyan variables */
+    --syntax-class: #a5e844;     /* Green/yellow functions and classes */
+    --syntax-tag: #ff9ebb;       /* Light pink tags */
 }
 
 /* Reset */
@@ -34,20 +34,43 @@
     padding: 0;
 }
 
-html, body {
+html {
     height: 100%;
     font-size: 62.5%; /* 10px = 1rem */
     color: var(--text-primary);
-    background-color: var(--bg-primary);
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow: hidden;
+    
+    /* Background Image on HTML */
+    background-color: var(--bg-primary);
+    background-image: url('./mj_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Custom premium background grid overlay */
 body {
-    background-image: radial-gradient(rgba(0, 245, 155, 0.02) 1.5px, transparent 0);
-    background-size: 24px 24px;
+    height: 100%;
+    overflow: hidden;
     position: relative;
+    background-color: transparent; /* Must be transparent so HTML image shows through */
+    
+    /* Grid Overlay on top of HTML image */
+    background-image: radial-gradient(rgba(179, 98, 255, 0.04) 1.5px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* Glassmorphism subtle blurs for IDE panels */
+.ide-sidebar, .ide-main-editor, .ide-terminal {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* High-contrast text shadows for optimal readability over background image */
+.code-line, .neofetch-value, .neofetch-label, .file-item, .neofetch-user, 
+.markdown-body h1, .markdown-body h2, .markdown-body p, .terminal-line, .status-item, .status-mode, .status-branch {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
 }
 
 /* Global scrollbar style */
@@ -139,7 +162,7 @@ body {
 }
 
 .file-item.active {
-    background-color: rgba(0, 245, 155, 0.04);
+    background-color: rgba(0, 245, 255, 0.04);
     color: var(--accent-color);
     border-left-color: var(--accent-color);
 }
@@ -150,7 +173,7 @@ body {
 
 /* File Icon Extensions colors */
 .markdown-color { color: #51afef; }
-.json-color { color: #ecc765; }
+.json-color { color: #56b6c2; }
 .python-color { color: #3572A5; }
 .log-color { color: #c678dd; }
 .txt-color { color: #a9a9a9; }
@@ -257,10 +280,10 @@ body {
     border: 2px solid var(--accent-color);
     border-radius: 12px;
     padding: 4px;
-    background-color: rgba(0, 245, 155, 0.05);
+    background-color: rgba(0, 245, 255, 0.05);
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 15px rgba(0, 245, 155, 0.2);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.25);
 }
 
 .neofetch-avatar-box img {
