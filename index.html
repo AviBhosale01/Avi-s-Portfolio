@@ -2,240 +2,119 @@
 <html lang="en">
 
 <head>
-    <!-- Google Font -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avishkar Pramod Bhosale - SDE & AI/ML Portfolio" />
+    <title>Avishkar Bhosale | SDE Portfolio</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
-        rel="stylesheet">
-
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS & JS -->
     <link rel="stylesheet" href="./style.css" />
     <script src="./index.js" defer></script>
-
-    <!-- Meta Tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Avi's Portfolio" />
-   
-    <title> Avi's Hackstudio </title>
-
-    <!-- Icons -->
-    <link rel="icon" href="./favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/icons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/icons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-touch-icon-57x57.png">
 </head>
 
 <body>
-    <main>
-        <!-- Hero Header -->
-        <header id="heroHeader" class="hero-header">
-            <nav id="navBar" class="nav">
-                <div class="container">
-                    <button type="button" id="hamburgerBtn" class="nav__hamburger-btn">
-                        <span class="nav__hamburger-top"></span>
-                        <span class="nav__hamburger-center"></span>
-                        <span class="nav__hamburger-bottom"></span>
-                    </button>
-                    <ul id="navList" class="nav__list">
-                        <li class="nav__list-item">
-                            <a class="nav__list-link active" href="#heroHeader">&lt;Home &sol;&gt;</a>
-                        </li>
-                        <li class="nav__list-item">
-                            <a class="nav__list-link" href="#services">&lt;Services &sol;&gt;</a>
-                        </li>
-                        <li class="nav__list-item">
-                            <a class="nav__list-link" href="#works">&lt;Works &sol;&gt;</a>
-                        </li>
-                        <li class="nav__list-item">
-                            <a class="nav__list-link" href="#contact">&lt;Contact &sol;&gt;</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <section class="header__container container">
-                <div class="header__left">
-                    <span class="header__sup-text">Hello There! I am Avii a</span>
-                    <h1 class="header__title">
-                        <span class="header__title-1" data-role="WEB">Educated</span>
-                        <span class="header__title-2" data-role="DEVELOPER"> Developer</span>
-                    </h1>
-                    <p class="header__msg">As a front-end web developer, my passion lies in creating beautiful and
-                        intuitive <br>
-                        user experiences through the use of clean and efficient code.</p>
-                    <a href="https://www.linkedin.com/in/aviibhosale-715643365/ " target="_blank"
-                        class="header__resume">Resume</a>
-                </div>
-                <div class="header__right">
-                    <img src="img.jpg " width="10" alt="Header section illustration" />
-                </div>
-            </section>
-            <span class="header__bg"></span>
-        </header>
+    <!-- Premium background cursor glow -->
+    <div id="cursorGlow" class="cursor-glow"></div>
 
-        <!-- Services -->
-        <section id="services" class="section container">
-            <h2 class="section__title">Services</h2>
-
-            <div class="service-cards">
-                <article class="service-card__box">
-                    <span class="service-card__illustration">
-                        <img src="https://cdn1.vectorstock.com/i/1000x1000/72/15/support-colored-rainbow-word-text-suitable-vector-22337215.jpg"
-                            alt="Support Illustration" />
-                    </span>
-                    <h3 class="service-card__title">Deployment</h3>
-                    <p class="service-card__msg"> I am always available to address any issues or concerns you may have.
-                    </p>
-                    <span class="service-card__bg"></span>
-                </article>
-                <article class="service-card__box">
-                    <span class="service-card__illustration">
-                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIREBQSERASFhIQFhUWEBYVEBcVEBAXFhgWFxUTFRUYHCggGhooHRcVITEiJSkrLi4uFyAzODMsNygtLisBCgoKDg0OGxAQGy8mICUtLS8tLy0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBEQACEQEDEQH/xAAbAAEAAQUBAAAAAAAAAAAAAAAABQECAwQGB//EAEUQAAIBAgMEBQcGDgIDAQAAAAABAgMRBCExBRJBYQZRcZGhEyIygbHB0QcUQlJicyMkMzQ1U1Ryg5KTosLwFYJj0uEW/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAMFAQIEBgf/xAA2EQEAAgECBAQDBwIGAwAAAAAAAQIDBBEFEiExEzJBUSJhcRQzUoGRobE04QYVYqLB0SMkQv/aAAwDAQACEQMRAD8A9VKl3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKxV2l1iI3kmdm6sNH/AFnV4VUPPJ82j1eI8KrHPKksKuF0YnDX0ZjJLWq0nHXvILUmqStolZFXaXWaxG87NpnaG6sNH/WdXhVQc8nzaPV4mfCqc8nzaPV4jwqnPKN+cwdWdJPzqdt5cmk0/E5LTWLzWPR1eHbw4vMdJbdHD72byXiyWmLm6yhtfZsLDx6vEmjFVHz2Ulho9nrMTirLMXlq1qW6+3QgvSapK25mTDUlK7fA2xUi3WWL2mOzHj92nuvRSlu8rtNr2EeptTFETPrOzOOZt0YzDZsUsNfN5cuJNTDv1lHbJ7M6w8erxJfCr7NOeVJYaPZ6zE4qyc8tWtT3Xa+unO2pBfHNUtbxK7D09556IzjpFp6sXtsuxdJRi5K9lrxy4skvi9mkZNu7XOdMzYekpPPREmOkWnq0vbZr7ZxVLDRjOo92Mpxp31UXK+631LK1+ZvfF03qitninnXkDoUAAAAAAAAAX0vSXajNfNDFuyRO5zuXltGu5TtVsozkktyLyTy4HjtRxfU48tqxPrKzppsc1idm9s/ak3JRq7rTyUkrNPmtDs0HHJyZIx5o79pQ5tLERzVTFSG8muvw5no7V5o2cUTt1RWCrb0rPKUJWkuadrrkVWm1EXyTjnzVnrH/AC68ldq7+kpct3I86ltvFNv8YkrNrSPX2FDfVZomY5v4eopodPyxM09Pmo9s4r9pl3R+Br9rzfi/ht9h034P5YMG5Kqpb8t6UleV883m2+JHW0zeJ39UuWtfCmNukR2em2PSPIOax+IrurJOcoRTailldcHfiRWmd1lgxYppE7byrh8fVh9PfXVL/wBlmhFphtfTY7do2W7Qx86soWhuqDve97v/AH2mLTzdDDp4pvvO+6Z2VV3oN8U8zOKNocWopy22anSb8nD7yPskVPHf6ePq30nn/I2O3JtPSH+pHLwLPky70v1ivqk1cRXrHq39o4yNGlKrLSCvbi28kvW2keox0m9orCrz5oxY5vPo4ertzFVXveVcIvSMEkl7362W1NJjiOzy+bimebdLbfRsYLb+IpvzpqpHipqz9UlmvXcxk0WO3bozh4vmpPxdYWbX23OvUpuMHTVFtrzrtt2v6rZW5s1xaOKxNbdd2+q4pOS1b4+mzpOj+PVZPhKKW8uHGzXIrMuknBefaey90XEK6un+qO8Jg0drnNoy+Zz3n+aVHm8/xWb0v/4pP+VvqatBkx79YQ+LOCfi8s/t/ZMYF6+oxg7y6sk7xDmvlV/R/wDFp/5HQq+JfcOY6G9K/JWoYiS8nn5Oo27w6oy+zz4dmkGTH6w4+G8S5NsWWenpL0M53pQAAAAAAAC+l6S7UZr5oYt2SJ3OdyEfSqfeT9p861v39vrP8rrH5I+i85qzMWjZtPZ1aPplfLCjc7e2Mnb68PFK55LUfDxSNvxR/ELGv9P+UujPXq5g+a0v1dP+SPwNOSntDfxMnvP6ysq4SjZ71Olu8bxil3ms48e3WIbRly79Jn93nVWUd+e4/NU5KD+zd7r7rHn8m0Wnlerxxaccc/fbq7XY23oVYqM2o1Es75RlzT9xdabVRljae7zur0N8Nt6xvVMtJrNJrvR1uGJmGrW2dTl9Gz645eGhrNYlNXUZK+qHxuEdN55p6PrI5jZ34c0ZI+aR2H6Ev3vcjenZy6vzx9GHpN+Th95H2SKfjv8ATx9WNJ5/yZNhaT7V7zn/AMOfd3+v/DbWeaGp02/Ne2pBPx99j1uj+8UHFp/9f84QWwsFGtWUJtqKi3ZOzla3m+N/UWepyTjx81XneH6emoz8l+3d03/5zDfUl/Un8St+25fd6H/J9L7T+qH6SbJpUKcZ07q8lFpttZptPPPh4nVpdVa9uWys4lw3HhpF8bL0M9Kr2R9sjHEO1W3AfNf6Q3+le2ngqMa27vRVWEai4uEt7e3eejXYVUr3UZvCpzpGlUpYijdbs6VaPbGcZKzTXhYykia5abx1iUT0b2dWwtStRlJyw8VCWFk3eUU95Sot/ZtG3J+paxXad0OnpfHM0md6+n/SO+VX9H/xaf8AkbIeJfcPJQ8s7Tod0r8nahiJeY35lSUvyeWUZN/Ry14X6tIMmP1hfcN4ly/+LLPT0n2ehJnO9JE7gAAAAAAL6XpLtRmvmhi3ZInc53JxoT3qnmSzqTt5rzzPAazT5pzW2rPefSfdb0yVisdW/gdnSlJOStFZu+r5WOzh3CM18kXyxtWOvXvKHNqaxXavdNzmoptuySu+SR7G1orE2ntCuiN+kOW2fU367qfXqJrsvkeIrm8XX1v72Wtq8uHb5OrR7lVPLXhm3K8Zek+D6zzt4vzT0l6+l8fLHWO0eyjwnXGXczSYv6xLaMlPSY/ZfQpNtRiruTSS629DWIm07Qze8VrNrdoSuK2BiKSUt1StruNyce1Wz9VzrtpM2L4o/Zw4+IYMvwz0+rLs/FN5KUoTWqUnFPnY7dPn542npKHNhrHXpMOn2RVqSi/KO9rbsrWb69NTtrM+qp1FKVt8LD0iklST478bdzv4XMX7NtH95+S/YfoS/e9yFOzOs88fRh6Tfk4feR9kin47/Tx9WNJ5/wAlmxa1puL+ksu1FV/h/URTLbFP/wBdvrCbWU3rFvZu7awPl6E6d7NpOL4KSd1fllb1ntMOTkvFlNq8HjYpo4atSnSlaalCS9TXNP3ova3reOnV4u+PJhvtMTEwnuh1Scp1N6pUmt1W3puSWfC7K/XUrWsbL3g2bJkvbmmZ6Q2Om/5tH72PskQ6L7x18X+4/Nr9DPTq9kfbI6eIdqq/gPmv9IYPlV/R/wDFp/5FVK24l9xLlOgPSj5rU8jWl+L1Hk3pRk/pfuvj39dyp4drPCtyX8s/s9bMvSOP+VX9H/xaf+QcHEvuPzeSh5YA7Pob0r8nu4fESbg92NGeX4Lgoyf1dM+HZpBkx+sL3hvEuTbFlnp6T7PQ0c70oAAAAAF0HZp9TMxO07k9YbcsZTWTqQT6nNJ9zOi2oxVnabQg5Leynz6l+tp/zx+Jj7Vh/HH6nh29pYa21qEdakXyj5z8CHJxHTY463j8ureuDJbtCE2jtOeI82CcafG+su34Hm+I8WnPHJTpX95d2HTRTrPdTCtQlF8ItPuZUabNGPNXJb0mE+SvNWYT72nQWtamn1OpFPubPoNNTivXmraNlV4GX8M/of8AK0P2il/Vj8TfxsfvB4GX8M/oo9q0P2il/Vj8THjY/eD7Pl/DP6OIxmPj88lVopbsZxlHK0ZNJb3qbv3lNlyVjNz093o8OC06WMeTvMOvwG3qNVXctyXFS4f9tC3w6imWu8KLPosuKdtt4+TfVeDz34P/ALIm6ObltHow4jaVKCzqR7E7y7kJmIbVw3t2hz2NxksRNO1qcPRXXzfMim26zw4YxR85Sux8RGKlGTSu7q7snw1Nq2iI6ubV47TMWhr9IsXCShCMlKW+pOzulZNZ9/gUPHNTjtjjHWd57saTHaJm0tJOzutVpyPJ1tNZi1Z6w75iJjaUpS25CKXlrx+3a8PXbNezsPccI4jGsjkt549Pf5x/0pdZEaf4reX39vq36WOozXm1aclynF+8uZpevpLnjLivHeJUq7Qow9KtSXbUj7LiKXt6SxObDSOsxDlOlW2qddQpUW5KMt6UrNRyTSSvrq3fsO/SYLUneyk4nrceSsUp+rJ0WxkKdSanJRU0rNu0bp6N8NfAl12O1qRMejm4PqKYssxedt0f8qW2qEsNGhCpCdSdSMmoSUtyMU85NaXbVl2lOtuJZ6eHyRPWXmxl5t6P8n/S6O6sNiZqO4vwFSUrJr9XJvRrhyy4K+F9w7Xbx4eSfpK75U9tUJYaOHhUhOpOpGTUJKW5GKecmtLtqy7TKbiWanh8kT1ebB5sAAdn0M6VeT3cPiJfg8lSnbODv6Mn9XPXhbq0gyY9+sL3hnEuTbFlnp6S9DOd6UAAAAADXxWEjU1SvwdvA4dZoq6ivTpb3S48k1lGSw0U7OKv2HkstcmO01t0l2xMTG8KKlFfRXcRc0tl5gANXG4KNRaLeWjt4M6tNqZxT8kuLNOOfkhJ0LOzjZovK3i0bxKyrfmjeJU8muo2Z3lVKwGSjVcXdevqfJm+PJbHO8I70i8bSmcO6dRXUVzXFFziy1yV3hXZK2pO0syoRX0USo95ZADRiYi0bSMcaMVmkjyfFOHWwz4mPy+3t/YXFGyNX1N6XtS0WrO0x2aXpW9ZraN4lD47Z6jnupxfeu0+mcC47TW18LL0yR/u+cfN4Hi/CL6S3iY+tJ/ZqKhH6p6TaFFzyvjFLRGWszMqmRzu2dipXqUor7UUu+UfgVeq0u3x0/RPTJM9JQZXNwCiglwDPNKoYAAFJ6PsMMx3e7Q0XYjhl7+nlhUNgAAAAAMWIoKS58GcGu0NdTX/AFR2lLjyTSUbOLTs9UeRy4rY7zS3eHbWYmN4WkbYAAa2NwimvtLR+5nVptTOKfkkxZZpPyQs4NNp6rUvK2i0bwsq2i0bwobNgC+jVcJb0dfB8mb48k47c0NL0i8bSncLiFUV1611Fziy1yV3hWZMc0naWYlaAAxMRMbSKNHkuKcMnBPiY/L/AB/YUKRkavk+JvTJalotWdpjtLS9K3rNbRvEorGYXczXov8At5M+mcB49XW18LL0yR/u+cfN4DjHB7aS3iY+tJ/b+zVPTKEAAc/tvZFr1Ka63OPvXwKvVaXb46fmmpffpKBK5IAAAACk9H2GGY7vdoaLsRwvoFPLH0VDIAAAAAADFiKCkua0ODXaKupp/qjslx5JrKNnFp2eqPI5cVsV5pbvDtrMTG8LSNsAAw18bhVNfaWnwZ1abUzin5JsWWaT8kLODi2nk1qXlLxaN47LGtotG8LTZsAb+xnDylpuSbaUWmt134S8Do01orZxayMnJvWI29f7JutScXZ+p9ZcRO7gpeLQxmW4AMTETG0ijR5LinC5wz4mPy+vy/sKFIFr5PR6kuG9qZK2rO0xMNclK3rNbRvEtLa2zHSe9HOm++HJ8uZ9e0OujNHLbzfy+dcU4XOmnnp5J/ZGlkpwABAbb2RrUprrc49X2l8Cr1Wl2+On5pqX36SgCuSDMMx3dr0u6Kbq+cYePm23q0F9DK7nFdXWuHZpDjyekrziHDdq+Lij6w4onUSk9H2GGY7vdoaLsRwvoFPLH0VDIAAAAAAABixFBSXPg/ccGt0NdTX2n0lLjyTWUbKLTs1meRy4r4rct42l21tExvC0jbAF9Om5OyXwRPp9Nkz25aQ0teKx1ZcfsmNSCSynHSVteT5HrMWirjxRSO8eqLDq7Y77+jlqtKUJOMk01qmctqzWdpXtL1vHNWeiww2AJ/YWLdROlNXUY3jLis7Wff4Hfpc0z8Ko1uGMU+JX19G1WpOLs/U+DLGJ3R0vFoWGW4BkoUnJ8uJpfaY2lHkvFYX4rDbua09n/wAPI8R4dOGfEx+X+GmLLzdJa6KrH54+sJ57JeUU001dPVPRnvqzNdphV2rFomtusS5rauy3Te9BN0+9w5PlzPRaLXRljlv5v5eM4nwu2nnnxxvT+EaWSnALoQcmktZOy7Wa3tFazMtsdJvaKx3lh6ZdE7Xr4aH3lKMdMs5wS8Vbjc8rTJ12l6jiPDNo8XFH1hwpMoIjrs90prJdiOGXv6x8MOC6Z9FN2+Iw8fN1q04r0OucUvo9a4dmnRjyekvPcT4btvlxR9YcPJZEyhju92isl2HDL6BXywqGQAAAAAAAABZUpRlqjmzaTDmne9d29b2r2lZ81h9XxZD/AJZpfwNvFv7qrDQ+qjNeHaaJ35IY8W/uypW0OytK1jasbNJncNmGvicBTqO84Jtcc0+y6I7Y627wmx58mPpWWD/hqH6v+6XxNfs+P2S/bc34j/hqH6v+6XxH2fH7Mfbc/wCJsYXB06d9yKV9eLfrZvWla9oRZM18nmndnavqbo4nZieGh1eJnmlJGW8eqiwserxM88k5rs0VbQ1RzMz3GjExExtIxRw8U7pHHj4fp6X5616t5y2mNt2U7UYBqVtmUZZumr8rx9h1Y9bnpG0WcGXhelyzvanX5dGJbFo/Vf8AO/iSTxLUT6/sgjgmkj0n9W1QwlOHoQin12z73mc+TUZcnntu7cGjwYeuOsR/LMQulEQ6M4RVfKqhHfT3lnLcT1uoX3fA28S22zjjh+ni/icvVLmrsAIil0YwkavlVQjvp3WctxPW6hey7jbxLbbOOOH6eL88V6pc1dgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/9k="
-                         alt="Design Illustration" />
-                    </span>
-                    <h3 class="service-card__title">Design</h3>
-                    <p class="service-card__msg">Specialized in creating stunning websites that are both visually
-                        appealing and user-friendly.</p>
-                    <span class="service-card__bg"></span>
-                </article>
-                <article class="service-card__box">
-                    <span class="service-card__illustration">
-                        <img src="data:image/jpeg;base64,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"
-                            alt="Deploy Illustration" />
-                    </span>
-                    <h3 class="service-card__title">Developing</h3>
-                    <p class="service-card__msg"> I offer custom web development services tailored to your specific
-                        needs as a solo professional.</p>
-                    <span class="service-card__bg"></span>
-                </article>
+    <div class="ide-container">
+        <!-- Sidebar Explorer Panel -->
+        <aside class="ide-sidebar">
+            <div class="sidebar-header">
+                <span>EXPLORER</span>
             </div>
-        </section>
-
-        <!-- Sample Works -->
-        <section id="works" class="section container">
-            <h2 class="section__title">My Works</h2>
-            <div class="works">
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="PYTHION HAacking.png" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">Python Hacking</h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="bert.jpg" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">Bert Model</h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="eigai2.png" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">Generative AI Ethics</h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="ISRO Certificate.png" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">IIRS Isro </h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="linked in eigai.png" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">Ethics In Gen AI</h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-                <article class="work">
-                    <div class="work__box">
-                        <span class="work__img-box">
-                            <img src="reliance.png" alt="My Work 1" />
-                        </span>
-                        <h3 class="work__title">Reliance IOT Network Specialist</h3>
-                        <span class="work__badges">
-                            <span class="work__badge">HTML</span>
-                            <span class="work__badge">CSS</span>
-                            <span class="work__badge">JavaScript</span>
-                        </span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section container">
-            <h2 class="section__title">Let's Connect!</h2>
-            <div class="contact">
-                <form class="contact__form">
-                    <div class="contact__field-wrapper">
-                        <label for="contactNameTxt">Name:</label>
-                        <input id="contactNameTxt" type="text" placeholder="What's your name?" />
-                    </div>
-                    <div class="contact__field-wrapper">
-                        <label for="contactDescriptionTxt">Message:</label>
-                        <textarea id="contactDescriptionTxt" placeholder="Lets connect!"></textarea>
-                    </div>
-
-                    <button type="submit" class="contact__submit-btn">Submit</button>
-                </form>
-                <span class="contact__illustration">
-                    <img src="" alt="Group of people connecting with each other" />
-                </span>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            Made with ❤️ by Avii <br>
-            Contact - avibhosale1982@gmail.com
             
-        </footer>
-    </main>
+            <div class="explorer-section">
+                <div class="section-title">
+                    <svg class="icon" viewBox="0 0 16 16" width="12" height="12"><path fill="currentColor" d="M7.007 1.5a.75.75 0 0 1 .75-.75h3.486c.199 0 .39.08.53.22l2.973 2.973c.14.14.22.33.22.53v8.514a.75.75 0 0 1-.75.75H1.75a.75.75 0 0 1-.75-.75v-10a.75.75 0 0 1 .75-.75h4.51c.3 0 .584-.1.815-.285L7.007 1.5Zm4.23.75v2.243h2.243L11.237 2.25ZM1.5 4.5v9h12v-7.5H10.5a.75.75 0 0 1-.75-.75V2.5h-3.48c-.067 0-.131.022-.183.064L4.996 3.444A2.25 2.25 0 0 1 3.5 4.5H1.5Z"/></svg>
+                    <span>/src</span>
+                </div>
+                <ul class="file-list">
+                    <li class="file-item active" data-file="README.md" id="fileReadme">
+                        <svg class="file-icon markdown-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14.854 4.854l-2.708-2.708c-.14-.14-.33-.22-.53-.22H2.5A1.5 1.5 0 0 0 1 3.5v9A1.5 1.5 0 0 0 2.5 14h11a1.5 1.5 0 0 0 1.5-1.5V5.384c0-.2-.08-.39-.22-.53zM10.5 3L13.5 6H10.5V3zM2.5 13V3h6.5v4.5A1.5 1.5 0 0 0 10.5 9H13.5v3.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5zM3.5 11h9v1h-9zm0-2h4v1h-4zm0-2h4v1h-4z"/></svg>
+                        <span>README.md</span>
+                    </li>
+                    <li class="file-item" data-file="skills.json" id="fileSkills">
+                        <svg class="file-icon json-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M4.708 5.578c-.24.115-.408.324-.438.625l-.014.28c-.03.585-.315.875-.855.875h-.35a.707.707 0 0 0-.707.707v.292c0 .39.317.707.707.707h.35c.54 0 .825.29.855.875l.014.28c.03.3.197.51.438.625.329.157.734-.037.854-.42l.067-.28c.03-.585.315-.875.855-.875h.35a.707.707 0 0 0 .707-.707V8.062A.707.707 0 0 0 7 7.355h-.35c-.54 0-.825-.29-.855-.875l-.014-.28a.656.656 0 0 0-.854-.622zM11.292 5.578c.24.115.408.324.438.625l.014.28c.03.585.315.875.855.875h.35a.707.707 0 0 1 .707.707v.292a.707.707 0 0 1-.707.707h-.35c-.54 0-.825.29-.855.875l-.014.28c-.03.3-.197.51-.438.625a.656.656 0 0 1-.854-.622l-.014-.28c-.03-.585-.315-.875-.855-.875H9a.707.707 0 0 1-.707-.707V8.062c0-.39.317-.707.707-.707h.35c.54 0 .825-.29.855-.875l.014-.28c.03-.3.197-.51.438-.625.329-.157.734.037.854.42l.067.28z"/></svg>
+                        <span>skills.json</span>
+                    </li>
+                    <li class="file-item" data-file="projects.py" id="fileProjects">
+                        <svg class="file-icon python-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M7.747.013c.273.007.525.04.757.098.81.205 1.4.67 1.488 1.488.082.766-.464 1.4-.464 2.158 0 .428.322.775.753.805 1.05.071 2.115.01 3.167.067.898.05 1.572.763 1.572 1.66v2.336c0 .763-.494 1.28-1.28 1.28H10.59c-.674 0-1.056-.56-1.056-1.235v-1.12c0-.56-.472-1.034-1.033-1.034-.56 0-1.034.473-1.034 1.034v1.12c0 .674-.381 1.235-1.055 1.235h-3.14c-.786 0-1.28-.517-1.28-1.28V6.287c0-.897.674-1.61 1.572-1.66 1.05-.057 2.116.004 3.167-.067.43-.03.753-.377.753-.805v-2.158c0-.818.59-1.283 1.403-1.488a4.67 4.67 0 0 1 .865-.098ZM3.59 9.384c.786 0 1.28.517 1.28 1.28V13.06c0 .897-.674 1.61-1.572 1.66-1.05.057-2.117-.004-3.167.067-.43.03-.753.377-.753.805v2.158c0 .818-.59 1.283-1.403 1.488A4.67 4.67 0 0 1 8.253 16c-.273-.007-.525-.04-.757-.098-.81-.205-1.4-.67-1.488-1.488-.082-.766.464-1.4.464-2.158 0-.428-.322-.775-.753-.805-1.05-.071-2.115-.01-3.167-.067-.898-.05-1.572-.763-1.572-1.66V7.387c0-.763.494-1.28 1.28-1.28h3.143c.674 0 1.056.56 1.056 1.235v1.12c0 .56.472 1.034 1.033 1.034Z"/></svg>
+                        <span>projects.py</span>
+                    </li>
+                    <li class="file-item" data-file="experience.log" id="fileExperience">
+                        <svg class="file-icon log-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14.854 4.854l-2.708-2.708c-.14-.14-.33-.22-.53-.22H2.5A1.5 1.5 0 0 0 1 3.5v9A1.5 1.5 0 0 0 2.5 14h11a1.5 1.5 0 0 0 1.5-1.5V5.384c0-.2-.08-.39-.22-.53zM10.5 3L13.5 6H10.5V3zM2.5 13V3h6.5v4.5A1.5 1.5 0 0 0 10.5 9H13.5v3.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5z"/></svg>
+                        <span>experience.log</span>
+                    </li>
+                    <li class="file-item" data-file="achievements.py" id="fileAchievements">
+                        <svg class="file-icon python-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M7.747.013c.273.007.525.04.757.098.81.205 1.4.67 1.488 1.488.082.766-.464 1.4-.464 2.158 0 .428.322.775.753.805 1.05.071 2.115.01 3.167.067.898.05 1.572.763 1.572 1.66v2.336c0 .763-.494 1.28-1.28 1.28H10.59c-.674 0-1.056-.56-1.056-1.235v-1.12c0-.56-.472-1.034-1.033-1.034-.56 0-1.034.473-1.034 1.034v1.12c0 .674-.381 1.235-1.055 1.235h-3.14c-.786 0-1.28-.517-1.28-1.28V6.287c0-.897.674-1.61 1.572-1.66 1.05-.057 2.116.004 3.167-.067.43-.03.753-.377.753-.805v-2.158c0-.818.59-1.283 1.403-1.488a4.67 4.67 0 0 1 .865-.098ZM3.59 9.384c.786 0 1.28.517 1.28 1.28V13.06c0 .897-.674 1.61-1.572 1.66-1.05.057-2.117-.004-3.167.067-.43.03-.753.377-.753.805v2.158c0 .818-.59 1.283-1.403 1.488A4.67 4.67 0 0 1 8.253 16c-.273-.007-.525-.04-.757-.098-.81-.205-1.4-.67-1.488-1.488-.082-.766.464-1.4.464-2.158 0-.428-.322-.775-.753-.805-1.05-.071-2.115-.01-3.167-.067-.898-.05-1.572-.763-1.572-1.66V7.387c0-.763.494-1.28 1.28-1.28h3.143c.674 0 1.056.56 1.056 1.235v1.12c0 .56.472 1.034 1.033 1.034Z"/></svg>
+                        <span>achievements.py</span>
+                    </li>
+                    <li class="file-item" data-file="certifications.txt" id="fileCertifications">
+                        <svg class="file-icon txt-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 1V1.5L8.5 4H11zM4 1v13h8V6H8V1.5H4z"/></svg>
+                        <span>certifications.txt</span>
+                    </li>
+                    <li class="file-item" data-file="contact.json" id="fileContact">
+                        <svg class="file-icon json-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M4.708 5.578c-.24.115-.408.324-.438.625l-.014.28c-.03.585-.315.875-.855.875h-.35a.707.707 0 0 0-.707.707v.292c0 .39.317.707.707.707h.35c.54 0 .825.29.855.875l.014.28c.03.3.197.51.438.625.329.157.734-.037.854-.42l.067-.28c.03-.585.315-.875.855-.875h.35a.707.707 0 0 0 .707-.707V8.062A.707.707 0 0 0 7 7.355h-.35c-.54 0-.825-.29-.855-.875l-.014-.28a.656.656 0 0 0-.854-.622zM11.292 5.578c.24.115.408.324.438.625l.014.28c.03.585.315.875.855.875h.35a.707.707 0 0 1 .707.707v.292a.707.707 0 0 1-.707.707h-.35c-.54 0-.825.29-.855.875l-.014.28c-.03.3-.197.51-.438.625a.656.656 0 0 1-.854-.622l-.014-.28c-.03-.585-.315-.875-.855-.875H9a.707.707 0 0 1-.707-.707V8.062c0-.39.317-.707.707-.707h.35c.54 0 .825-.29.855-.875l.014-.28c.03-.3.197-.51.438-.625.329-.157.734.037.854.42l.067.28z"/></svg>
+                        <span>contact.json</span>
+                    </li>
+                    <li class="file-item link-file" id="fileResumePDF">
+                        <svg class="file-icon pdf-color" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 1V1.5L8.5 4H11zM4 1v13h8V6H8V1.5H4z"/></svg>
+                        <a href="https://www.linkedin.com/in/aviibhosale-715643365/" target="_blank" class="sidebar-link">resume.pdf</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Editor Section -->
+        <main class="ide-main-editor">
+            <!-- Tabs Bar -->
+            <div class="editor-tabs" id="editorTabs">
+                <!-- Tabs are inserted dynamically by JS -->
+            </div>
+
+            <!-- Editor Code Viewer -->
+            <div class="editor-body">
+                <div class="editor-content-wrapper" id="editorContent">
+                    <!-- Dynamic code content loaded here -->
+                </div>
+            </div>
+
+            <!-- Terminal Drawer -->
+            <div class="ide-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-tab active">&gt;_ TERMINAL</span>
+                    <span class="terminal-subtab">1: pwsh</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                    <div class="terminal-line color-fg-muted">Windows PowerShell</div>
+                    <div class="terminal-line color-fg-muted">Copyright (C) Microsoft Corporation. All rights reserved.</div>
+                    <br>
+                    <div class="terminal-line"><span class="terminal-prompt">PS C:\Users\ASUS\Portfolio&gt;</span> <span class="typed-command" id="typedCommand"></span><span class="cursor">|</span></div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <footer class="ide-status-bar">
+                <div class="status-left">
+                    <span class="status-mode">NORMAL</span>
+                    <span class="status-branch">
+                        <svg viewBox="0 0 16 16" width="12" height="12" style="margin-right: 4px;"><path fill="currentColor" d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 2.122a2.25 2.25 0 1 0-1.5 0v5.256a2.251 2.251 0 1 0 1.5 0V5.372Zm8-.122a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 2.122a2.25 2.25 0 1 0-1.5 0v1.256a2.251 2.251 0 1 0 1.5 0V7.372ZM11.5 9a.75.75 0 1 0 0 1.5 .75.75 0 0 0 0-1.5Z"/></svg>
+                        main
+                    </span>
+                </div>
+                <div class="status-right">
+                    <span class="status-item">UTF-8</span>
+                    <span class="status-item">HTML / CSS / JS</span>
+                    <span class="status-item" id="editorLineCount">Ln 142, Col 8</span>
+                </div>
+            </footer>
+        </main>
+    </div>
 </body>
 
 </html>
