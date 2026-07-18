@@ -612,6 +612,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Drag-to-resize terminal logic
+    const resizeHandle = document.getElementById('terminalResizeHandle');
+    const terminalDrawer = document.getElementById('terminalDrawer');
+    if (resizeHandle && terminalDrawer) {
+        let isResizing = false;
+        let startY, startHeight;
+
+        resizeHandle.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startY = e.clientY;
+            startHeight = terminalDrawer.offsetHeight;
+            document.body.classList.add('resizing');
+            
+            window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('mouseup', handleMouseUp);
+        });
+
+        function handleMouseMove(e) {
+            if (!isResizing) return;
+            const deltaY = startY - e.clientY;
+            const newHeight = startHeight + deltaY;
+
+            // Set boundary limits (Min: 50px, Max: 80% viewport height)
+            const minHeight = 50;
+            const maxHeight = window.innerHeight * 0.8;
+
+            if (newHeight >= minHeight && newHeight <= maxHeight) {
+                terminalDrawer.style.height = `${newHeight}px`;
+            }
+        }
+
+        function handleMouseUp() {
+            if (!isResizing) return;
+            isResizing = false;
+            document.body.classList.remove('resizing');
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseup', handleMouseUp);
+        }
+    }
+
     // Open initial tab
     switchTab(activeTab);
 });

@@ -427,6 +427,30 @@ body {
     border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    position: relative; /* Essential for absolute positioning of handle */
+}
+
+.terminal-resize-handle {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    cursor: ns-resize;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.15s ease;
+}
+
+.terminal-resize-handle:hover,
+body.resizing .terminal-resize-handle {
+    background-color: var(--accent-color); /* Glowing cyan indicator */
+}
+
+body.resizing {
+    cursor: ns-resize !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
 }
 
 .terminal-header {
