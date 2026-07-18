@@ -467,6 +467,25 @@ body {
     color: var(--syntax-variable);
 }
 
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.terminal-input {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-primary) !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 1.2rem !important;
+    outline: none !important;
+    flex: 1;
+    margin-left: 0.8rem;
+    caret-color: var(--accent-color);
+    box-shadow: none !important;
+}
+
 .cursor {
     animation: blink 1s step-end infinite;
     color: var(--accent-color);

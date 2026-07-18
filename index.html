@@ -85,16 +85,22 @@
             </div>
 
             <!-- Terminal Drawer -->
-            <div class="ide-terminal">
+            <div class="ide-terminal" id="terminalDrawer">
                 <div class="terminal-header">
                     <span class="terminal-tab active">&gt;_ TERMINAL</span>
                     <span class="terminal-subtab">1: pwsh</span>
                 </div>
                 <div class="terminal-body" id="terminalBody">
-                    <div class="terminal-line color-fg-muted">Windows PowerShell</div>
-                    <div class="terminal-line color-fg-muted">Copyright (C) Microsoft Corporation. All rights reserved.</div>
-                    <br>
-                    <div class="terminal-line"><span class="terminal-prompt">PS C:\Users\ASUS\Portfolio&gt;</span> <span class="typed-command" id="typedCommand"></span><span class="cursor">|</span></div>
+                    <div id="terminalHistory">
+                        <div class="terminal-line color-fg-muted">Windows PowerShell</div>
+                        <div class="terminal-line color-fg-muted">Copyright (C) Microsoft Corporation. All rights reserved.</div>
+                        <div class="terminal-line color-fg-muted">Type 'help' to see list of available commands.</div>
+                        <br>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="terminal-prompt">PS C:\Users\ASUS\Portfolio&gt;</span>
+                        <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" />
+                    </div>
                 </div>
             </div>
 

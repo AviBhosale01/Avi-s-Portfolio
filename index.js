@@ -159,6 +159,7 @@ ideathon_2026 = "Second Runner-Up (3rd out of 160+ competing teams)"`
 // State variables
 let openTabs = ['README.md'];
 let activeTab = 'README.md';
+let executingFromTerminal = false;
 
 // Render the entire file view with line numbering and syntax styling
 function renderFileContent(fileName) {
@@ -308,11 +309,156 @@ function highlightMarkdown(line) {
     return escaped;
 }
 
+// Execute Interactive Terminal Command
+function executeTerminalCommand(cmdString) {
+    const history = document.getElementById('terminalHistory');
+    if (!history) return;
+
+    // Append command prompt line to history
+    const commandLine = document.createElement('div');
+    commandLine.className = 'terminal-line';
+    commandLine.innerHTML = `<span class="terminal-prompt">PS C:\\Users\\ASUS\\Portfolio&gt;</span> <span>${escapeHTML(cmdString)}</span>`;
+    history.appendChild(commandLine);
+
+    const trimmed = cmdString.trim();
+    if (!trimmed) {
+        scrollToBottom();
+        return;
+    }
+
+    const args = trimmed.split(/\s+/);
+    const cmd = args[0].toLowerCase();
+    const arg = args[1] ? args[1] : '';
+
+    const outputLine = document.createElement('div');
+    outputLine.className = 'terminal-line';
+
+    let outputHTML = '';
+
+    switch (cmd) {
+        case 'help':
+            outputHTML = `
+            <div>Available commands:</div>
+            <div style="margin-left: 2rem; margin-top: 0.5rem; line-height: 1.8;">
+              <strong>ls</strong>              - List all available portfolio files<br>
+              <strong>cat &lt;file&gt;</strong>      - Open and display file contents in the editor (e.g., cat skills.json)<br>
+              <strong>clear</strong>           - Clear the terminal console history<br>
+              <strong>whoami</strong>          - Display profile details for Avishkar Bhosale<br>
+              <strong>uptime</strong>          - Show active browser session session time<br>
+              <strong>python &lt;file&gt;</strong>   - Execute mock python scripts (achievements.py, projects.py)<br>
+              <strong>help</strong>            - Display this manual reference page
+            </div>`;
+            break;
+        case 'clear':
+            history.innerHTML = '';
+            scrollToBottom();
+            return;
+        case 'whoami':
+            outputHTML = `
+            <div style="margin-bottom: 0.5rem;"><strong>avishkar\\avi-vivobook</strong></div>
+            <div>----------------------</div>
+            <div><strong>Role</strong>: Software Development Engineer (SDE)</div>
+            <div><strong>College</strong>: AISSMS Institute of Information Technology, Pune (B.Tech IT)</div>
+            <div><strong>DSA Rankings</strong>: Rating 2534 on LeetCode, Ninja Dominator on Coding Ninjas</div>
+            <div><strong>Interests</strong>: AI/ML, Computer Vision, Cybersecurity, Offensive Security (THM Voyager)</div>`;
+            break;
+        case 'uptime':
+            const diff = Date.now() - START_TIME;
+            const hrs = Math.floor(diff / 3600000);
+            const mins = Math.floor((diff % 3600000) / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+            outputHTML = `<div>System Uptime: ${hrs}h ${mins}m ${secs}s (active website session)</div>`;
+            break;
+        case 'ls':
+            outputHTML = `
+            <div class="color-fg-muted" style="margin-bottom: 0.5rem;">Directory: C:\\Users\\ASUS\\Portfolio\\src</div>
+            <div>Mode                 LastWriteTime         Length Name</div>
+            <div>----                 -------------         ------ ----</div>
+            <div>-a---          2026-07-18    10:00           1088 README.md</div>
+            <div>-a---          2026-07-18    10:00            512 skills.json</div>
+            <div>-a---          2026-07-18    10:00           2048 projects.py</div>
+            <div>-a---          2026-07-18    10:00            512 experience.log</div>
+            <div>-a---          2026-07-18    10:00           1024 achievements.py</div>
+            <div>-a---          2026-07-18    10:00           1024 certifications.txt</div>
+            <div>-a---          2026-07-18    10:00            256 contact.json</div>
+            <div>-a---          2026-07-18    10:00        221669 mj_bg.jpg</div>`;
+            break;
+        case 'cat':
+        case 'type':
+            if (!arg) {
+                outputHTML = `<div style="color: #ff5555;">cat : Missing operand. Specify a valid filename (e.g. cat skills.json).</div>`;
+            } else if (FILE_DATA[arg]) {
+                outputHTML = `<div style="color: var(--accent-color);">cat: File loaded. Displaying '${arg}' in workspace editor pane.</div>`;
+                openFileFromTerminal(arg);
+            } else if (arg === 'mj_bg.jpg') {
+                outputHTML = `<div style="color: #ffb86c;">cat: mj_bg.jpg: Cannot display binary image data inside a text console.</div>`;
+            } else {
+                outputHTML = `<div style="color: #ff5555;">cat: '${arg}': File not found in current directory directory.</div>`;
+            }
+            break;
+        case 'python':
+            if (!arg) {
+                outputHTML = `<div style="color: #ff5555;">python : No script specified. Use: python projects.py</div>`;
+            } else if (arg === 'projects.py') {
+                outputHTML = `
+                <div>Running projects.py...</div>
+                <div style="color: var(--syntax-variable);">Initializing PersonalProjects class...</div>
+                <div style="color: var(--syntax-class);">Loaded 4 featured projects:</div>
+                <div style="margin-left: 2rem; color: var(--syntax-string); line-height: 1.8;">
+                  - <strong>Crime Analytics Platform</strong> (Geospatial ML Profiling Platform)<br>
+                  - <strong>CGAN-Model</strong> (IR Image Restoration with attention block)<br>
+                  - <strong>Agrirent Platform</strong> (Ideathon MVP Equipment Rental portal)<br>
+                  - <strong>Text-to-Handwriting</strong> (Python OpenCV custom compositor)
+                </div>`;
+                openFileFromTerminal('projects.py');
+            } else if (arg === 'achievements.py') {
+                outputHTML = `
+                <div>Running achievements.py...</div>
+                <div style="color: var(--syntax-class); margin-top: 0.5rem;">[LeetCode]</div>
+                <div style="margin-left: 2rem;">Rating: <strong>2534</strong> (Top 18.98% of users, Ninja status)</div>
+                <div style="color: var(--syntax-class); margin-top: 0.3rem;">[Coding Ninjas]</div>
+                <div style="margin-left: 2rem;">Title: <strong>Ninja Dominator</strong> (147+ problems solved, 6,500+ XP)</div>
+                <div style="color: var(--syntax-class); margin-top: 0.3rem;">[TryHackMe]</div>
+                <div style="margin-left: 2rem;">Rank: <strong>VOYAGER (0x6)</strong> (19 security labs completed)</div>
+                <div style="color: var(--syntax-class); margin-top: 0.3rem;">[Ideathon]</div>
+                <div style="margin-left: 2rem;">Award: <strong>2nd Runner-Up</strong> (3rd out of 160+ competing teams)</div>`;
+                openFileFromTerminal('achievements.py');
+            } else {
+                outputHTML = `<div style="color: #ff5555;">python: error: script not found or not executable: '${arg}'</div>`;
+            }
+            break;
+        default:
+            outputHTML = `
+            <div style="color: #ff5555;">
+              ${cmd} : The term '${cmd}' is not recognized as the name of a cmdlet, function, script file, or operable program.<br>
+              Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+            </div>`;
+    }
+
+    outputLine.innerHTML = outputHTML;
+    history.appendChild(outputLine);
+    scrollToBottom();
+}
+
+function scrollToBottom() {
+    const terminalBody = document.getElementById('terminalBody');
+    if (terminalBody) {
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+}
+
+// Open file from terminal cmdlet action
+function openFileFromTerminal(fileName) {
+    executingFromTerminal = true;
+    openFile(fileName);
+    executingFromTerminal = false;
+}
+
 // Simulate terminal output typing
 let typingInterval = null;
 function simulateTerminalCommand(fileName) {
-    const typedCommandElem = document.getElementById('typedCommand');
-    if (!typedCommandElem) return;
+    const inputField = document.getElementById('terminalInput');
+    if (!inputField) return;
 
     // Clear any active typing intervals
     if (typingInterval) clearInterval(typingInterval);
@@ -323,22 +469,25 @@ function simulateTerminalCommand(fileName) {
     } else if (fileName.endsWith('.json')) {
         command = `cat ${fileName}`;
     } else if (fileName.endsWith('.log') || fileName.endsWith('.txt')) {
-        command = `type ${fileName}`;
+        command = `cat ${fileName}`;
     } else {
         command = `cat ${fileName}`;
     }
 
-    typedCommandElem.innerText = '';
+    inputField.value = '';
     let idx = 0;
     
     typingInterval = setInterval(() => {
         if (idx < command.length) {
-            typedCommandElem.innerText += command[idx];
+            inputField.value += command[idx];
             idx++;
         } else {
             clearInterval(typingInterval);
+            // Execute it in history!
+            executeTerminalCommand(command);
+            inputField.value = '';
         }
-    }, 40);
+    }, 45);
 }
 
 // Render open tabs bar
@@ -389,7 +538,10 @@ function switchTab(fileName) {
 
     renderTabs();
     document.getElementById('editorContent').innerHTML = renderFileContent(fileName);
-    simulateTerminalCommand(fileName);
+    
+    if (!executingFromTerminal) {
+        simulateTerminalCommand(fileName);
+    }
 }
 
 // Close an active tab
@@ -436,6 +588,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cursorGlow) {
         window.addEventListener('mousemove', (e) => {
             cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        });
+    }
+
+    // Terminal click forces focus on terminal input
+    const terminalBody = document.getElementById('terminalBody');
+    if (terminalBody) {
+        terminalBody.addEventListener('click', () => {
+            const inputField = document.getElementById('terminalInput');
+            if (inputField) inputField.focus();
+        });
+    }
+
+    // Capture enter commands keypress
+    const terminalInput = document.getElementById('terminalInput');
+    if (terminalInput) {
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = terminalInput.value;
+                executeTerminalCommand(cmd);
+                terminalInput.value = '';
+            }
         });
     }
 
